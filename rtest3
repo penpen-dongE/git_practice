@@ -1,0 +1,35 @@
+# Plotting factors
+# 
+# To create basic visualizations in R, a great place to start is the plot() function. 
+This function is very generic, as the graphs it creates are different depending 
+on the type of input information.
+# 
+# If you try to plot factors, for example, plot() will automagically create a bar chart 
+that nicely displays the number of occurences of each factor.
+# 
+# You can also pass plot() vectors; the data corresponding to the first argument is 
+then shown on the horizontal x-axis, while the second vector will be plotted on the y-axis.
+# 
+# In this and the following exercises, you'll be working with the movies data frame 
+(Source: OMDb API). It contains around 600 movies of four different genres, 
+together with their release year, the IMDb score and number of votes. 
+movies is already available in the workspace.
+
+
+# movies is already pre-loaded
+
+# Display the structure of movies
+str(movies)
+'data.frame':	570 obs. of  6 variables:
+ $ title  : chr  "The Wizard of Oz" "Singin' in the Rain" "Seven Samurai" ...
+ $ year   : int  1939 1952 1954 1957 1959 1959 1959 1962 1964 1964 ...
+ $ rating : num  8.1 8.4 8.8 8.3 8.2 8.5 8.4 8.4 8.6 7.8 ...
+ $ votes  : int  208759 108083 172933 110134 115368 165993 130010 140500 263464 110105 ...
+ $ runtime: int  102 103 207 161 212 136 120 216 95 110 ...
+ $ genre  : Factor w/ 4 levels "Action","Adventure",..: 2 4 1 2 2 1 4 2 4 1 ...
+
+# Plot the genre variable of movies
+plot(movies$genre)
+
+# Plot the genre variable against the rating variable
+plot(movies$genre, movies$rating)
